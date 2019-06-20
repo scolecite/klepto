@@ -3,7 +3,7 @@
   "name": "Yext Extension",
   "version": "1.0",
   "description": "The greatest extension to ever exist",
-  "permissions": ["activeTab", "declarativeContent", "storage", "clipboardWrite", "clipboardRead"],
+  "permissions": ["activeTab"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
