@@ -1,5 +1,5 @@
 if (typeof copyCSS === 'undefined') {
-  var desiredProperties = ['font-family', 'font-size', 'line-height', 'font-weight', 'color', 'text-decoration', 'font-style'];
+  var desiredProperties = ['font-family', 'font-size', 'line-height', 'font-weight', 'color', 'text-decoration', 'font-style', 'letter-spacing', 'text-transform', 'font-variant', 'text-shadow'];
 
   var copyCSS = function(e) {
     const properties = window.getComputedStyle(window.getSelection().anchorNode.parentNode);
