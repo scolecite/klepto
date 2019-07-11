@@ -3,17 +3,25 @@
   "name": "Yext Extension",
   "version": "1.0",
   "description": "The greatest extension to ever exist",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "tabs", "storage", "clipboardWrite", "clipboardRead"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
   "browser_action": {
     "default_icon": "images/disabled.png",
-    "default_title": "Disabled. Click to enable."
+    "default_title": "Waiting for background..."
   },
   "icons": {
     "48": "images/get_started48.png"
+  },
+  "commands": {
+    "copy-styles": {
+      "suggested_key":  {
+        "default": "Ctrl+Right"
+      },
+      "description":  "Copy Styles"
+    }
   },
   "manifest_version": 2
 }
