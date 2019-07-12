@@ -1,0 +1,108 @@
+#klepto-box {
+    background-color: white;
+    width: 300px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding-bottom: 15px;
+    font-family: Roboto;
+    font-size: 14px;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+}
+#klepto-header  {
+    height: 37px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+    user-select: none;
+}
+
+.klepto-title   {
+    font-weight: bold;
+    color: #333333;
+    grid-column-start: 2;
+}
+
+.klepto-close   {
+    width: 18px;
+    height: 18px;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.klepto-content {
+    background-color: #f4f4f4;
+    min-height: 48px;
+    color: #969696;
+    text-align: center;
+    line-height: 48px;
+}
+
+.klepto-item   {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: 52% 14% 13% 9%;
+    grid-column-gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.klepto-item:hover  {
+    cursor: pointer;
+}
+
+.klepto-item:hover:not(:active) {
+    background-color: #eaeaea;
+}
+
+.klepto-items:first-child   {
+    border-top: 1px solid #eaeaea;
+}
+
+.klepto-items   {
+    max-height: 240px;
+    min-height: 48px;
+    overflow: auto;
+    background-color: #f4f4f4;
+    color: #969696;
+}
+
+.klepto-items:empty:before {
+    content: "No Styles Copied";
+}
+
+.klepto-items:empty {
+    text-align: center;
+    line-height: 48px;
+}
+
+.klepto-item:active .klepto-prop-val {
+    color: #ff5d5b;
+}
+
+.klepto-prop-val    {
+    line-height: 32px;
+    letter-spacing: 0.3px;
+    font-family: "Roboto Medium";
+    height: 32px;
+}
+
+.klepto-prop-name   {
+    height: 18px;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.23px;
+    text-transform: uppercase;
+}
+
+.klepto-item:active .klepto-copy {
+    fill: #ff5d5b;
+}
