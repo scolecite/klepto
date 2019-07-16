@@ -47,6 +47,8 @@ function toggleUI(curId, state)  {
       path: "/images/enabled.png",
       tabId: curId
     });
+    chrome.tabs.executeScript({file: 'addMenu.js'});
+    chrome.tabs.insertCSS({file: 'TestPage/test.css'});
   } else  {
     chrome.browserAction.setTitle({title: disabledText, tabId: curId});
     chrome.browserAction.setIcon({
@@ -58,13 +60,7 @@ function toggleUI(curId, state)  {
 
 chrome.commands.onCommand.addListener(function(command) {
   if(toggleStatus && command === "copy-styles")  {
-    chrome.tabs.query(
-      {currentWindow: true, active: true}, function(tabs) {
-        if(tabs.length > 0) {
-          chrome.tabs.executeScript(tabs[0].id, {file: 'csSketch.js'});
-        }
-      }
-    );
+    chrome.tabs.executeScript({file: 'csSketch.js'});
   }});
 
   chrome.runtime.onInstalled.addListener(function(details)  {

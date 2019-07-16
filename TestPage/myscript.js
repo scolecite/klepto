@@ -1,6 +1,7 @@
 let kleptoBox = document.getElementById("klepto-box");
 let kleptoHeader = document.getElementById("klepto-header");
 let isDown = false;
+console.log('hello');
 
 kleptoHeader.addEventListener('mousedown', function(e) {
     isDown = true;
