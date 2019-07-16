@@ -28,13 +28,17 @@ function updateStatus(curId, tabURL, toggle) {
     chrome.storage.sync.get('sites', function(items)  {
       console.log(items.sites);
       let siteName = (new URL(tabURL)).hostname.match(/[^.]+.[^.]+$/);
+      if(!items.sites[siteName])  {
+        items.sites[siteName] = {};
+        items.sites[siteName].props = [];
+      }
       if(toggle)  {
-        items.sites[siteName] = !items.sites[siteName];
+        items.sites[siteName].status = !items.sites[siteName].status;
         chrome.storage.sync.set({
           sites: items.sites
         });
       }
-      toggleUI(curId, items.sites[siteName]);
+      toggleUI(curId, items.sites[siteName].status);
     });
   }
 }
@@ -47,8 +51,8 @@ function toggleUI(curId, state)  {
       path: "/images/enabled.png",
       tabId: curId
     });
-    chrome.tabs.executeScript({file: 'addMenu.js'});
-    chrome.tabs.insertCSS({file: 'TestPage/test.css'});
+    // chrome.tabs.executeScript({file: 'addMenu.js'});
+    // chrome.tabs.insertCSS({file: 'TestPage/test.css'});
   } else  {
     chrome.browserAction.setTitle({title: disabledText, tabId: curId});
     chrome.browserAction.setIcon({
