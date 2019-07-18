@@ -1,6 +1,39 @@
 const disabledText = "Disabled. Click to enable.";
 const enabledText = "Enabled. Click to disable.";
 let toggleStatus;
+let menu;
+let siteDivs = {};
+
+// fetch(chrome.extension.getURL('TestPage/test.html'))
+//     .then(response => response.text())
+//     .then(menuData => {
+//       menu = menuData;
+//     });
+// console.time('hello');
+// fetch(chrome.extension.getURL('TestPage/test.html'))
+//     .then(response => response.text())
+//     .then(menuData => {
+//         fetch(chrome.extension.getURL('TestPagef/item.html'))
+//             .then(aresponse => aresponse.text())
+//             .then(itemData => {
+//                 menu = document.createElement('div');
+//                 menu.id = "klepto-box";
+//                 menu.innerHTML = menuData;
+                
+
+//                 let itemList = document.createElement('div');
+//                 itemList.className = "klepto-item";
+//                 itemList.innerHTML = itemData;
+//                 let itemVals = itemList.getElementsByClassName('klepto-prop-val');
+//                 itemVals[0].innerHTML = "FontFam";
+//                 itemVals[1].innerHTML = "100";
+//                 itemVals[2].innerHTML = "2px";
+
+//                 let itemDiv = menu.getElementsByClassName('klepto-items');
+//                 itemDiv[0].appendChild(itemList);
+//             });
+//     });
+//     console.timeEnd('hello');
 
 toggleUI(undefined, false);
 
@@ -32,6 +65,9 @@ function updateStatus(curId, tabURL, toggle) {
         items.sites[siteName] = {};
         items.sites[siteName].props = [];
       }
+      if(!siteDivs[siteName])  {
+        siteDivs[siteName] = menu;
+      }
       if(toggle)  {
         items.sites[siteName].status = !items.sites[siteName].status;
         chrome.storage.sync.set({
@@ -51,8 +87,13 @@ function toggleUI(curId, state)  {
       path: "/images/enabled.png",
       tabId: curId
     });
-    // chrome.tabs.executeScript({file: 'addMenu.js'});
-    // chrome.tabs.insertCSS({file: 'TestPage/test.css'});
+    // let itemVals = menu.getElementsByClassName('klepto-prop-val');
+    // itemVals[1].innerHTML = 1 + parseInt(itemVals[1].innerHTML);
+    // console.log(1);
+
+    chrome.tabs.executeScript({file: 'addMenu.js'});
+
+    chrome.tabs.insertCSS({file: 'TestPage/test.css'});
   } else  {
     chrome.browserAction.setTitle({title: disabledText, tabId: curId});
     chrome.browserAction.setIcon({

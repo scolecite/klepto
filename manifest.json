@@ -25,6 +25,7 @@
   },
   "web_accessible_resources": [
     "TestPage/test.html",
+    "TestPage/item.html",
     "TestPage/myscript.js"
   ],
   "manifest_version": 2
