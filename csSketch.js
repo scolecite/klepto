@@ -10,7 +10,7 @@ var siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/);
 
 chrome.storage.sync.get('sites', function(items)  {
   var siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/);
-    items.sites[siteName].props.push(properties);
+    items.sites[siteName].props.unshift(properties);
     console.log(items.sites);
     chrome.storage.sync.set({
       sites: items.sites
@@ -18,4 +18,10 @@ chrome.storage.sync.get('sites', function(items)  {
     chrome.storage.sync.getBytesInUse(null, function(bytesInUse)  {
       console.log(bytesInUse);
     })
+    let itemDiv = menu.getElementsByClassName('klepto-items')[0];
+    let item = addItem(properties);
+    if(itemDiv.children.length) item.style.height = '0px';
+    itemDiv.insertBefore(item, itemDiv.firstChild);
+    item.offsetHeight; // Force the browser to compute the height before we change it
+    item.style.height = '51px';
 });

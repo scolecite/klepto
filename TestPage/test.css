@@ -53,6 +53,7 @@
     grid-column-gap: 10px;
     align-items: center;
     border-bottom: 1px solid #eaeaea;
+    transition: height 1s;
 }
 
 .klepto-item:hover  {
@@ -93,6 +94,9 @@
     letter-spacing: 0.3px;
     font-family: "Roboto Medium";
     height: 32px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .klepto-prop-name   {
