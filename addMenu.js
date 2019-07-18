@@ -1,7 +1,7 @@
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties;
 
 if(typeof baseMenu === 'undefined') {
-    siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/);
+    siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/)[0];
     addItem = function(props) {
         let item = baseItem.cloneNode(true);
         let itemVals = item.getElementsByClassName('klepto-prop-val');
@@ -16,15 +16,26 @@ if(typeof baseMenu === 'undefined') {
         itemVals[0].style.textTransform = props[8];
         itemVals[0].style.fontVariant = props[9];
         itemVals[0].style.textShadow = props[10];
-        itemVals[1].innerHTML = props[1];
-        itemVals[2].innerHTML = props[2];
+        itemVals[1].innerHTML = parseInt(props[1]);
+        itemVals[2].innerHTML = parseInt(props[2])+ 'px';
+        let propString = getPropString(props);
+        copyProps(propString);
+        item.onclick = function()   {
+            navigator.clipboard.writeText(propString);
+        }
         return item;
     }
-    // copyProps = function()  {
-    //     let propString = '';
-    //     for(i = 0; i < desiredProperties.length; ++i)   {
-    //         propString += desiredProperties[i] + ': ' + siteProps[]
-    //     }
+     getPropString = function(props)  {
+        let propString = '';
+        for(i = 0; i < desiredProperties.length; ++i)   {
+            propString += desiredProperties[i] + ': ' + props[i] + '\n';
+        }
+        return propString;
+    }
+
+    copyProps = function(propString)  {
+        navigator.clipboard.writeText(propString);
+    }
     //     var propString = desiredProperties.reduce((result, currentProp) =>
     //         result + currentProp + ': ' + properties.getPropertyValue(currentProp) + '\n', ""
     //         )
@@ -45,23 +56,28 @@ if(typeof baseMenu === 'undefined') {
                 baseItem.innerHTML = itemData;
                 baseItem.onclick = 
                 console.log(baseItem);
+                menu = baseMenu.cloneNode(true);
                 addMenu();
+                document.body.appendChild(menu);
             });
     });
 }   else    {
-    menu.remove();
     addMenu();
 }
 
 function addMenu()  {
-    menu = baseMenu.cloneNode(true);
-    let itemDiv = menu.getElementsByClassName('klepto-items')[0];
-
-    chrome.storage.sync.get('sites', function(items)  {
-        siteProps = items.sites[siteName].props;
-        siteProps.forEach(props => {
+    let itemDiv = document.createElement('div');
+    itemDiv.className = 'klepto-items';
+    chrome.storage.sync.get(siteName, function(items)  {
+        console.log(siteName);
+        console.log(items[siteName]);
+        siteProps = items[siteName];
+        console.log(siteProps);
+        console.log(siteProps.props);
+        siteProps.props.forEach(props => {
             itemDiv.appendChild(addItem(props));
         })
     });
-    document.body.appendChild(menu);
+    menu.lastChild.remove();
+    menu.appendChild(itemDiv);
 }

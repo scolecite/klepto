@@ -4,6 +4,18 @@ let toggleStatus;
 let menu;
 let siteDivs = {};
 
+// console.log('LEGIT');
+// let siteName = (new URL(`https://www.w3schools.com/jsref/met_win_settimeout.asp`)).hostname.match(/[^.]+.[^.]+$/)[1];
+// console.log(siteName);
+// let maybe = 'isfat';
+// chrome.storage.sync.set({
+//   [siteName]: maybe
+// });
+// chrome.storage.sync.get(siteName, function(items)  {
+//   console.log(items);
+// })
+// console.log('ENDLEGIT');
+
 // fetch(chrome.extension.getURL('TestPage/test.html'))
 //     .then(response => response.text())
 //     .then(menuData => {
@@ -57,24 +69,32 @@ chrome.tabs.onActivated.addListener(function(activeInfo)  {
 })
 
 function updateStatus(curId, tabURL, toggle) {
+  console.log('WUT');
+  chrome.storage.sync.get(null, function(items)  {
+    console.log('HERE');
+    console.log(items);
+  })
   if(tabURL !== undefined)  {
-    chrome.storage.sync.get('sites', function(items)  {
-      console.log(items.sites);
-      let siteName = (new URL(tabURL)).hostname.match(/[^.]+.[^.]+$/);
-      if(!items.sites[siteName])  {
-        items.sites[siteName] = {};
-        items.sites[siteName].props = [];
-      }
-      if(!siteDivs[siteName])  {
-        siteDivs[siteName] = menu;
+    let siteName = (new URL(tabURL)).hostname.match(/[^.]+.[^.]+$/)[0];
+    chrome.storage.sync.get(siteName, function(items)  {
+      console.log(items[siteName]);
+      if(!items[siteName])  {
+        console.log('initializing!');
+        items[siteName] = {};
+        items[siteName].props = [];
       }
       if(toggle)  {
-        items.sites[siteName].status = !items.sites[siteName].status;
-        chrome.storage.sync.set({
-          sites: items.sites
-        });
+        items[siteName].status = !items[siteName].status;
       }
-      toggleUI(curId, items.sites[siteName].status);
+      if(toggle || !items[siteName]) {
+        chrome.storage.sync.set({
+          [siteName]: items[siteName]
+        }, function() {
+          toggleUI(curId, items[siteName].status);
+        });
+      } else  {
+        toggleUI(curId, items[siteName].status);
+      }
     });
   }
 }
@@ -108,12 +128,6 @@ chrome.commands.onCommand.addListener(function(command) {
     chrome.tabs.executeScript({file: 'csSketch.js'});
   }});
 
-  chrome.runtime.onInstalled.addListener(function(details)  {
-    chrome.storage.sync.set({
-      sites: {}
-    });
-  });
-
   chrome.windows.onFocusChanged.addListener(function(windowId)  {
     chrome.tabs.query(
       {currentWindow: true, active: true}, function(tabs) {
@@ -121,4 +135,8 @@ chrome.commands.onCommand.addListener(function(command) {
           updateStatus(tabs[0].id, tabs[0].url, false);
       }}
     );
+  });
+
+  chrome.runtime.onInstalled.addListener(function(details)  {
+    chrome.storage.sync.clear();
   });
