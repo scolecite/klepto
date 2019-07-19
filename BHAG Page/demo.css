@@ -1,0 +1,63 @@
+.all    {
+    font-family: Helvetica;
+    font-size: 25px;
+}
+
+.all > * {
+    margin-bottom: 30px;
+    border: 1px solid black;
+    padding: 10px;
+    display: inline-block;
+}
+
+.text1  {
+    font-size: 50px;
+    color: rgb(30, 156, 101, 0.7);
+    line-height: 150px;
+    font-weight: 700;
+    text-decoration: underline line-through dashed;
+    font-family: 'Comic Sans MS';
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 10px 10px 5px rgb(224, 25, 221, 0.3);
+}
+
+.text2  {
+    font-size: 8px;
+}
+
+.text3  {
+    color: rgb(245, 123, 66, 0.4);
+}
+
+.text4  {
+    line-height: 100px;
+}
+
+.text5  {
+    font-weight: 900;
+}
+
+.text6  {
+    text-decoration: underline double;
+}
+
+.text7  {
+    font-family: Impact;
+}
+
+.text8  {
+    font-style: italic;
+}
+
+.text9  {
+    letter-spacing: 15px;
+}
+
+.text10  {
+    text-transform: uppercase;
+}
+
+.text11  {
+    text-shadow: 5px 5px 2px red;
+}
