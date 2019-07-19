@@ -1,6 +1,6 @@
-var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties;
-console.log('adding!');
+var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties, totalItems;
 if(typeof baseMenu === 'undefined') {
+    totalItems = 0;
     siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/)[0];
     addItem = function(props) {
         let item = baseItem.cloneNode(true);
@@ -23,6 +23,7 @@ if(typeof baseMenu === 'undefined') {
         item.onclick = function()   {
             navigator.clipboard.writeText(propString);
         }
+        ++totalItems;
         return item;
     }
      getPropString = function(props)  {
@@ -36,11 +37,6 @@ if(typeof baseMenu === 'undefined') {
     copyProps = function(propString)  {
         navigator.clipboard.writeText(propString);
     }
-    //     var propString = desiredProperties.reduce((result, currentProp) =>
-    //         result + currentProp + ': ' + properties.getPropertyValue(currentProp) + '\n', ""
-    //         )
-    //         navigator.clipboard.writeText(propString);
-    // }
     desiredProperties = ['font-family', 'font-weight', 'font-size', 'line-height', 'color', 'text-decoration', 'font-style', 'letter-spacing', 'text-transform', 'font-variant', 'text-shadow'];
     fetch(chrome.extension.getURL('TestPage/test.html'))
     .then(response => response.text())
@@ -55,7 +51,6 @@ if(typeof baseMenu === 'undefined') {
                 baseItem.className = "klepto-item";
                 baseItem.innerHTML = itemData;
                 baseItem.onclick = 
-                console.log(baseItem);
                 menu = baseMenu.cloneNode(true);
                 addMenu();
                 document.body.appendChild(menu);
@@ -74,7 +69,6 @@ if(typeof baseMenu === 'undefined') {
                 });
 
                 function moveKleptoBox(e)    {
-                    console.log('waste');
                     menu.style.left = (e.clientX + offset[0]) + 'px';
                     menu.style.top  = (e.clientY + offset[1]) + 'px';
                 }
@@ -88,15 +82,14 @@ function addMenu()  {
     let itemDiv = document.createElement('div');
     itemDiv.className = 'klepto-items';
     chrome.storage.sync.get(siteName, function(items)  {
-        console.log(siteName);
-        console.log(items[siteName]);
         siteProps = items[siteName];
-        console.log(siteProps);
-        console.log(siteProps.props);
-        siteProps.props.forEach(props => {
-            itemDiv.appendChild(addItem(props));
-        })
-    });
-    menu.lastChild.remove();
-    menu.appendChild(itemDiv);
+        if(siteProps.props.length !== totalItems)   {
+            totalItems = 0;
+            siteProps.props.forEach(props => {
+                itemDiv.appendChild(addItem(props));
+            })
+        menu.lastChild.remove();
+        menu.appendChild(itemDiv);
+        }
+    }); 
 }

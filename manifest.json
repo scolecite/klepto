@@ -34,7 +34,12 @@
   "web_accessible_resources": [
     "TestPage/test.html",
     "TestPage/item.html",
-    "TestPage/myscript.js"
+    "TestPage/myscript.js",
+    "fonts/Roboto-Regular.ttf"
   ],
+  "content_scripts":  [{
+    "matches": ["<all_urls>"],
+    "css": ["TestPage/test.css"]
+  }],
   "manifest_version": 2
 }
