@@ -104,9 +104,15 @@ function toggleUI(curId, state)  {
   if(state) {
     chrome.browserAction.setTitle({title: enabledText, tabId: curId});
     chrome.browserAction.setIcon({
-      path: "/images/enabled.png",
+      path: {
+        "16": "images/klepto_active_16.png",
+        "32": "images/klepto_active_32.png",
+        "48": "images/klepto_active_48.png",
+        "128": "images/klepto_active_128.png"
+      },
       tabId: curId
     });
+    console.log('trying!');
     // let itemVals = menu.getElementsByClassName('klepto-prop-val');
     // itemVals[1].innerHTML = 1 + parseInt(itemVals[1].innerHTML);
     // console.log(1);
@@ -117,9 +123,15 @@ function toggleUI(curId, state)  {
   } else  {
     chrome.browserAction.setTitle({title: disabledText, tabId: curId});
     chrome.browserAction.setIcon({
-      path: "/images/disabled.png",
+      path: {
+        "16": "images/klepto_inactive_16.png",
+        "32": "images/klepto_inactive_32.png",
+        "48": "images/klepto_inactive_48.png",
+        "128": "images/klepto_inactive_128.png"
+      },
       tabId: curId
     });
+    chrome.tabs.executeScript({file: 'killMenu.js'});
   }
 }
 

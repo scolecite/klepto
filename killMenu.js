@@ -1,0 +1,2 @@
+menu.remove();
+baseMenu = undefined;

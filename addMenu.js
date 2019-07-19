@@ -1,5 +1,5 @@
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties;
-
+console.log('adding!');
 if(typeof baseMenu === 'undefined') {
     siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/)[0];
     addItem = function(props) {
@@ -59,6 +59,25 @@ if(typeof baseMenu === 'undefined') {
                 menu = baseMenu.cloneNode(true);
                 addMenu();
                 document.body.appendChild(menu);
+                let kleptoHeader = menu.getElementsByClassName("klepto-header")[0];
+
+                kleptoHeader.addEventListener('mousedown', function(e) {
+                    offset = [
+                        menu.offsetLeft - e.clientX,
+                        menu.offsetTop - e.clientY
+                    ];
+                    document.addEventListener('mousemove', moveKleptoBox);
+                });
+
+                document.addEventListener('mouseup', function() {
+                    document.removeEventListener('mousemove', moveKleptoBox);
+                });
+
+                function moveKleptoBox(e)    {
+                    console.log('waste');
+                    menu.style.left = (e.clientX + offset[0]) + 'px';
+                    menu.style.top  = (e.clientY + offset[1]) + 'px';
+                }
             });
     });
 }   else    {

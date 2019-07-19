@@ -11,7 +11,6 @@ chrome.storage.sync.getBytesInUse(null, function(bytesInUse)  {
 })
 let itemDiv = menu.getElementsByClassName('klepto-items')[0];
 let item = addItem(properties);
-item.onclick = 
 if(itemDiv.children.length) item.style.height = '0px';
 itemDiv.insertBefore(item, itemDiv.firstChild);
 item.offsetHeight; // Force the browser to compute the height before we change it
