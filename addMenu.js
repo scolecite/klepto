@@ -1,7 +1,12 @@
+console.log('FIRE');
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties, totalItems;
 if(typeof baseMenu === 'undefined') {
     totalItems = 0;
-    siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/)[0];
+    if(window.location.href.startsWith('file')) {
+      siteName = 'file';
+    } else  {
+      siteName = (new URL(window.location.href)).hostname.match(/[^.]+.[^.]+$/)[0];
+    }
     addItem = function(props) {
         let item = baseItem.cloneNode(true);
         let itemVals = item.getElementsByClassName('klepto-prop-val');

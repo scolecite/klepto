@@ -7,6 +7,7 @@ let siteDivs = {};
 toggleUI(undefined, 'chrome://', false);
 
 chrome.browserAction.onClicked.addListener(function(tab)  {
+  console.log('clicked');
   updateStatus(tab.id, tab.url, true);
 });
 
@@ -27,7 +28,14 @@ chrome.tabs.onActivated.addListener(function(activeInfo)  {
 
 function updateStatus(curId, tabURL, toggle) {
   if(tabURL !== undefined)  {
-    let siteName = (new URL(tabURL)).hostname.match(/[^.]+.[^.]+$/)[0];
+    console.log(tabURL);
+    let siteName;
+    if(tabURL.startsWith('file')) {
+      siteName = 'file';
+    } else  {
+      siteName = (new URL(tabURL)).hostname.match(/[^.]+.[^.]+$/)[0];
+    }
+    console.log(siteName);
     chrome.storage.sync.get(siteName, function(items)  {
       if(!items[siteName])  {
         items[siteName] = {};
@@ -40,6 +48,7 @@ function updateStatus(curId, tabURL, toggle) {
         chrome.storage.sync.set({
           [siteName]: items[siteName]
         }, function() {
+          console.log('toggling');
           toggleUI(curId, tabURL, items[siteName].status);
         });
       } else  {
