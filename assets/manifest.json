@@ -2,7 +2,7 @@
   "author": "Blake Quigley",
   "name": "Klepto",
   "version": "1.0",
-  "description": "Copy CSS styles from text to clipboard and then to Sketch... with style",
+  "description": "Swipe CSS text styles from a page directly into Sketch.",
   "permissions": ["activeTab", "tabs", "storage", "clipboardWrite", "clipboardRead", "<all_urls>"],
   "background": {
     "scripts": ["background.js"],

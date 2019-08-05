@@ -1,5 +1,6 @@
 console.log('FIRE');
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties, totalItems;
+
 if(typeof baseMenu === 'undefined') {
     totalItems = 0;
     if(window.location.href.startsWith('file')) {
@@ -13,7 +14,7 @@ if(typeof baseMenu === 'undefined') {
         itemVals[0].innerHTML = props[0].match(/['"]*([^',"]+)/)[1];
         itemVals[0].style.fontFamily = props[0];
         itemVals[0].style.fontWeight = props[1];
-        itemVals[0].style.fontSize = Math.min(30, parseInt(props[2])) + 'px';
+        itemVals[0].style.fontSize = Math.min(20, parseInt(props[2])) + 'px';
         itemVals[0].style.color = props[4];
         itemVals[0].style.textDecoration = props[5];
         itemVals[0].style.fontStyle = props[6];
@@ -27,16 +28,29 @@ if(typeof baseMenu === 'undefined') {
         copyProps(propString);
         item.onclick = function()   {
             navigator.clipboard.writeText(propString);
+            item.style.color = "#ff5d5b";
+            item.style.backgroundColor = "#F9E3E4";
+            /* need to apply pink to the copy icon as well */ 
         }
         ++totalItems;
         return item;
     }
+
+/* 
+if (clipboard.writeText = propString) {
+      item.style.color = "#ff5d5b";
+      item.style.backgroundColor = "#F9E3E4";
+}
+
+aka, if what is in the clipboard, matches the properties in 
+*/
+
      getPropString = function(props)  {
         let propString = '';
         for(i = 0; i < desiredProperties.length; ++i)   {
             propString += desiredProperties[i] + ': ' + props[i] + '\n';
         }
-        return propString;
+        return propString;  
     }
 
     copyProps = function(propString)  {
@@ -60,6 +74,9 @@ if(typeof baseMenu === 'undefined') {
                 addMenu();
                 document.body.appendChild(menu);
                 let kleptoHeader = menu.getElementsByClassName("klepto-header")[0];
+                document.getElementsByClassName("klepto-item").style.color="blue";
+
+// Dragging it Around
 
                 kleptoHeader.addEventListener('mousedown', function(e) {
                     offset = [

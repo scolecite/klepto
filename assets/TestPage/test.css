@@ -5,7 +5,7 @@
     border-radius: 5px;
     padding-bottom: 15px;
     font-family: Roboto;
-    font-size: 14px;
+    font-size: 15px;
     position: fixed;
     right: 30px;
     top: 30px;
@@ -62,7 +62,11 @@
 }
 
 .klepto-item:hover:not(:active) {
-    background-color: #eaeaea;
+  /*    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.25s ease-in-out;
+    z-index: 99;
+*/
+    background-color: #eaeaea; /* OG Style*/
 }
 
 .klepto-items:first-child   {
@@ -77,6 +81,8 @@
     color: #969696;
 }
 
+
+
 .klepto-items:empty:before {
     content: "No Styles Copied";
 }
@@ -84,10 +90,6 @@
 .klepto-items:empty {
     text-align: center;
     line-height: 48px;
-}
-
-.klepto-item:active .klepto-prop-val {
-    color: #ff5d5b;
 }
 
 .klepto-prop-val    {
@@ -109,6 +111,20 @@
     text-transform: uppercase;
 }
 
+
+.klepto-item:active {
+    background-color:  #F9E3E4;
+    transition: 0.2s ease-in-out alternate;
+} 
+
+.klepto-item:active .klepto-prop-val {
+    color: #ff5d5b;
+    background-color: #F9E3E4;
+    transition: 0.2s ease-in-out alternate;
+}
+
 .klepto-item:active .klepto-copy {
     fill: #ff5d5b;
+    background-color: #F9E3E4;
+    transition: 0.2s ease-in-out alternate;
 }
