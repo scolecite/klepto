@@ -28,22 +28,23 @@ if(typeof baseMenu === 'undefined') {
         copyProps(propString);
         item.onclick = function()   {
             navigator.clipboard.writeText(propString);
+            // Clear style from other elements in history
+            Array.from(document.getElementsByClassName("klepto-item")).forEach(
+                (element, index, array) => {
+                   element.style.backgroundColor = "#f4f4f4";  
+                   element.style.color = "#969696";  
+                } 
+            );
             item.style.color = "#ff5d5b";
             item.style.backgroundColor = "#F9E3E4";
-            /* need to apply pink to the copy icon as well */ 
+            // TODO need to apply pink to the copy icon as well
         }
+
+        
         ++totalItems;
         return item;
     }
 
-/* 
-if (clipboard.writeText = propString) {
-      item.style.color = "#ff5d5b";
-      item.style.backgroundColor = "#F9E3E4";
-}
-
-aka, if what is in the clipboard, matches the properties in 
-*/
 
      getPropString = function(props)  {
         let propString = '';
@@ -74,7 +75,6 @@ aka, if what is in the clipboard, matches the properties in
                 addMenu();
                 document.body.appendChild(menu);
                 let kleptoHeader = menu.getElementsByClassName("klepto-header")[0];
-                document.getElementsByClassName("klepto-item").style.color="blue";
 
 // Dragging it Around
 
