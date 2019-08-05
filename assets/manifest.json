@@ -35,7 +35,9 @@
     "TestPage/test.html",
     "TestPage/item.html",
     "TestPage/myscript.js",
-    "fonts/Roboto-Regular.ttf"
+    "fonts/Roboto-Regular.ttf",
+    "fonts/Roboto-Bold.ttf",
+    "fonts/RobotoMono-Medium.ttf"
   ],
   "content_scripts":  [{
     "matches": ["<all_urls>"],

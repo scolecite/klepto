@@ -91,7 +91,9 @@
 .klepto-prop-val    {
     line-height: 32px;
     letter-spacing: 0.3px;
-    font-family: "Roboto Medium";
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    src: url(‘chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono-Medium.ttf’); 
     height: 32px;
     text-overflow: ellipsis;
     white-space: nowrap;
