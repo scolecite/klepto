@@ -46,7 +46,6 @@ if(typeof baseMenu === 'undefined') {
             // Set active icon color
             document.getElementsByClassName("item-selected")[0].children[3].children[0].style.fill = "00FEB3";
         }
-
         ++totalItems;
         return item;
     }
