@@ -66,10 +66,9 @@ function toggleUI(curId, tabURL, state)  {
     chrome.browserAction.setTitle({title: enabledText, tabId: curId});
     chrome.browserAction.setIcon({
       path: {
-        "16": "images/klepto_active_16.png",
-        "32": "images/klepto_active_32.png",
-        "48": "images/klepto_active_48.png",
-        "128": "images/klepto_active_128.png"
+        "16": "images/icon16_active.png",
+        "48": "images/icon48_active.png",
+        "128": "images/icon128_active.png"
       },
       tabId: curId
     });
@@ -79,10 +78,9 @@ function toggleUI(curId, tabURL, state)  {
     chrome.browserAction.setTitle({title: disabledText, tabId: curId});
     chrome.browserAction.setIcon({
       path: {
-        "16": "images/klepto_inactive_16.png",
-        "32": "images/klepto_inactive_32.png",
-        "48": "images/klepto_inactive_48.png",
-        "128": "images/klepto_inactive_128.png"
+        "16": "images/icon16_inactive.png",
+        "48": "images/icon48_inactive.png",
+        "128": "images/icon128_inactive.png"
       },
       tabId: curId
     });

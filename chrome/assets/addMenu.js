@@ -1,4 +1,5 @@
 console.log('FIRE');
+// Create all these variables.
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties, totalItems;
 
 if(typeof baseMenu === 'undefined') {
@@ -26,21 +27,26 @@ if(typeof baseMenu === 'undefined') {
         itemVals[2].innerHTML = parseInt(props[2])+ 'px';
         let propString = getPropString(props);
         copyProps(propString);
-        item.onclick = function()   {
+        item.onclick = function() {
             navigator.clipboard.writeText(propString);
-            // Clear style from other elements in history
+            // Rebuild the list of items, setting them all to the 'unselected' colors
             Array.from(document.getElementsByClassName("klepto-item")).forEach(
                 (element, index, array) => {
-                   element.style.backgroundColor = "#f4f4f4";  
-                   element.style.color = "#969696";  
-                } 
+                    console.log("index is " + index)
+                    element.style.color = "#C8C8C8"; 
+                    element.style.backgroundColor = "#1A1E33";  
+                    kleptoCopy[index].style.fill = "#C8C8C8";
+                    element.classList.remove("item-selected");
+                }
             );
-            item.style.color = "#ff5d5b";
-            item.style.backgroundColor = "#F9E3E4";
-            // TODO need to apply pink to the copy icon as well
+            // Add styles to selected element
+            item.style.color = "#00FEB3";
+            item.style.backgroundColor = "#282C41";
+            item.classList.add("item-selected");
+            // Set active icon color
+            document.getElementsByClassName("item-selected")[0].children[3].children[0].style.fill = "00FEB3";
         }
 
-        
         ++totalItems;
         return item;
     }
@@ -58,7 +64,7 @@ if(typeof baseMenu === 'undefined') {
         navigator.clipboard.writeText(propString);
     }
     desiredProperties = ['font-family', 'font-weight', 'font-size', 'line-height', 'color', 'text-decoration', 'font-style', 'letter-spacing', 'text-transform', 'font-variant', 'text-shadow'];
-    fetch(chrome.extension.getURL('TestPage/test.html'))
+    fetch(chrome.extension.getURL('TestPage/test.html')) // Get the markup+styles of menu here.
     .then(response => response.text())
     .then(menuData => {
         baseMenu = document.createElement('div');
@@ -67,9 +73,9 @@ if(typeof baseMenu === 'undefined') {
         fetch(chrome.extension.getURL('TestPage/item.html'))
             .then(aresponse => aresponse.text())
             .then(itemData => {
-                baseItem = document.createElement('div');
-                baseItem.className = "klepto-item";
-                baseItem.innerHTML = itemData;
+                baseItem = document.createElement('div'); // Make a div
+                baseItem.className = "klepto-item"; // Set its classname to klepto-item
+                baseItem.innerHTML = itemData; // Load its contents with itemData
                 baseItem.onclick = 
                 menu = baseMenu.cloneNode(true);
                 addMenu();
