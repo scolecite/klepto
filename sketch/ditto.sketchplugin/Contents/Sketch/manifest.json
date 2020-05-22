@@ -6,7 +6,7 @@
   "commands": [
     {
       "name": "Paste CSS Styles",
-      "identifier": "cssketch.my-command-identifier",
+      "identifier": "ditto.my-command-identifier",
       "script": "my-command.js",
       "shortcut": "ctrl alt v"
     }
@@ -14,7 +14,7 @@
   "menu": {
     "title": "Ditto",
     "items": [
-      "cssketch.my-command-identifier"
+      "ditto.my-command-identifier"
     ],
     "isRoot": true
   },
