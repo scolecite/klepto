@@ -3,24 +3,24 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "Paste Klepto Styles",
+      "name": "Paste CSS Styles",
       "identifier": "cssketch.my-command-identifier",
       "script": "my-command.js",
       "shortcut": "ctrl alt v"
     }
   ],
   "menu": {
-    "title": "Klepto",
+    "title": "Ditto",
     "items": [
       "cssketch.my-command-identifier"
     ]
   },
   "version": "0.1.0",
   "description": "",
-  "name": "Klepto",
-  "identifier": "Klepto",
+  "name": "Ditto",
+  "identifier": "Ditto",
   "disableCocoaScriptPreprocessor": true,
   "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
   "author": "Blake Quigley & Yana Gevorgyan",
-  "authorEmail": "blakedquigley@gmail.com"
+  "authorEmail": "ygis@mit.edu"
 }
