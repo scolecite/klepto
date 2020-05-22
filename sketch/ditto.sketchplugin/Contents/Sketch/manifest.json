@@ -22,12 +22,12 @@
 
 
 
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "",
   "name": "Ditto",
   "identifier": "Ditto",
   "disableCocoaScriptPreprocessor": true,
   "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
-  "author": "Blake Quigley & Yana Gevorgyan",
+  "author": "Yana Gevorgyan & Blake Quigley",
   "authorEmail": "ygis@mit.edu"
 }
