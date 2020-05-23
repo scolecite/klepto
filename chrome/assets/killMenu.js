@@ -1,5 +1,3 @@
-
-
 try {
     menu.remove();
     baseMenu = undefined;
