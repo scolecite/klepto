@@ -1,4 +1,3 @@
-console.log('FIRE');
 // Create all these variables.
 var baseMenu, baseItem, siteName, menu, addItem, siteProps, copyProps, desiredProperties, totalItems;
 
