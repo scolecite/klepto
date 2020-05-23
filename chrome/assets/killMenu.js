@@ -1,2 +1,8 @@
-menu.remove();
-baseMenu = undefined;
+
+
+try {
+    menu.remove();
+    baseMenu = undefined;
+  }
+  catch(err) {
+  }
