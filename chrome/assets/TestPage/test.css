@@ -81,7 +81,7 @@
 
 
 .klepto-items:empty:before {
-    content: "Select Text and Press ⌘ + →";
+    content: "No Styles Selected";
 }
 
 .klepto-items:empty {
