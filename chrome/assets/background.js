@@ -1,5 +1,5 @@
-const disabledText = "Disabled. Click to enable.";
-const enabledText = "Enabled. Click to disable.";
+const disabledText = "Ditto CSS-to-Sketch Converter";
+const enabledText = "Click to Disable";
 let toggleStatus;
 let menu;
 let siteDivs = {};
