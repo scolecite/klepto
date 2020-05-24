@@ -7,4 +7,5 @@
 
 html {
     background-color: var(--blueDark);
+    overflow-x: hidden;
 }
