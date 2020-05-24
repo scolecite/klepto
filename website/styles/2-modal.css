@@ -1,8 +1,23 @@
 .modal {
     background-color: var(--blueLight);
-    z-index: -1;
+    z-index: 0;
     position: relative;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__img--wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.modal__txt--wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +33,7 @@
     mix-blend-mode: color-dodge;
 }
 
-.modal__img--mobile {
+.modal__img {
     max-width: 90%;
     box-sizing: border-box;
 }
@@ -47,6 +62,61 @@
 /* TABLET & UP */
 @media only screen and (min-width: 768px) {
 
+    .modal {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
+    .modal__txt--wrapper {
+        align-items: flex-start;
+    }
+
+    .modal__txt {
+        padding: 0;
+        width: 30vw;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .modal__btn--wrapper {
+        width: 60%;
+    }
+
+    .modal__btn--wrapper:hover {
+        background-color: var(--teal);
+    }
+
+    .modal__img--gradient {
+        width: 100vw;
+        height: 80vh;
+        transform: translate(-25%, -20%);
+    }
+
+    .hero__btn--github {
+        background-image: url(../images/icon--github.svg);
+        border-right: 0px solid var(--white);
+        width: 5vw;
+    }
+
+    .modal__btn--txt {
+        border-left: 0px solid var(--white);
+    }
+
+    .modal__img--wrapper {
+        padding: 0;
+        width: 25%;
+        height: auto;
+        position: relative;
+    }
+
+    .modal__img--shadow {
+        width: 20vw;
+        height: 18vw;
+        position: absolute;
+        z-index: -1;
+        top: 30%;
+        left: 0;
+        outline: var(--white) 1px solid;
+    }
 
 }
