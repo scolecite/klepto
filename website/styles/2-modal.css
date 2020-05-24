@@ -1,0 +1,52 @@
+.modal {
+    background-color: var(--blueLight);
+    z-index: -1;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__img--gradient {
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: -1;
+    width: 100vw;
+    mix-blend-mode: color-dodge;
+}
+
+.modal__img--mobile {
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.modal__txt {
+    text-align: center;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+}
+
+.modal__btn--wrapper {
+    width: 80vw;
+}
+
+.modal__btn--txt {
+    border-left: 1px solid var(--white);
+}
+
+.hero__btn--github {
+    background-image: url(../images/icon--github.svg);
+    border-right: 1px solid var(--white);
+}
+
+/* TABLET & UP */
+@media only screen and (min-width: 768px) {
+
+
+
+}

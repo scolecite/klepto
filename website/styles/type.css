@@ -34,6 +34,14 @@ h4 {
     line-height: 150%;
 }
 
+h5 {
+    color: var(--white);
+    font-family: Career;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+}
 
 /* TABLET & UP */
 @media only screen and (min-width: 768px) {
@@ -54,5 +62,6 @@ h4 {
     h4 {
         font-size: 0.8vw;
     }
+
 
 }

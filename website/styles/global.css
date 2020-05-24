@@ -5,6 +5,14 @@
     --white: #FFFFFF;
 }
 
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 html {
     background-color: var(--blueDark);
     overflow-x: hidden;
