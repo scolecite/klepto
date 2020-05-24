@@ -1,0 +1,10 @@
+:root {
+    --blueDark: #1A1E33;
+    --blueLight: #282C41;
+    --teal: #00FEB3;
+    --white: #FFFFFF;
+}
+
+html {
+    background-color: var(--blueDark);
+}

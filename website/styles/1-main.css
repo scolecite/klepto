@@ -1,0 +1,17 @@
+.hero__img--mobile {
+    width: 100%;
+}
+
+.hero__container {
+    border: 1px solid var(--white);
+    box-sizing: border-box;
+    top: 0;
+}
+
+.hero__txt {
+    padding: 36px;
+}
+
+.hero__lead {
+    
+}
