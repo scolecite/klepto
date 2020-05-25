@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/type.css">
         <link rel="stylesheet" href="styles/1-main.css">
@@ -17,9 +18,9 @@
     <body>
         <main class="hero">
             <img src="images/chrome--mobile.svg" alt="" class="hero__img--mobile">
-            <img src="images/chrome--desktop.svg" alt="" class="hero__img--desktop">
+            <img data-aos="fade-up" src="images/chrome--desktop.svg" alt="" class="hero__img--desktop">
             <img src="images/gradient--main.svg" alt="" class="hero__img--gradient">
-            <div class="hero__container">
+            <div data-aos="fade-up" class="hero__container">
                 <div class="hero__txt">
                     <h1 class="hero__lead">Ditto</h1>
                     <h2 class="hero__headline">Copy font styles from websites and paste them into Sketch.</h2>
@@ -38,12 +39,12 @@
             </div>
         </main>
         <section class="modal">
-            <div class="modal__img--wrapper">
+            <div data-aos="fade-up" class="modal__img--wrapper">
                 <div class="modal__img--shadow"></div>
                 <img src="images/modal--mobile.png" alt="" class="modal__img">
             </div>
             <img src="images/gradient--modal.svg" alt="" class="modal__img--gradient">
-            <aside class="modal__txt--wrapper">
+            <aside data-aos="fade-up"  class="modal__txt--wrapper">
                 <h5 class="modal__txt">Optimize your team’s CSS-to-Sketch workflow.</h5>
                 <a href="" class="hero__btn--wrapper modal__btn--wrapper">
                     <div class="hero__btn--img hero__btn--github"></div>
@@ -73,5 +74,9 @@
         </footer>
     </body>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts/stars.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </html>
