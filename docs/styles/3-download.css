@@ -11,7 +11,13 @@
     border-right: 1px solid var(--white);
 }
 
+.download__btn:hover{
+   background-color: var(--teal);
+}
+
 .download__img--gradient {
+    height: 50vh;
+    z-index: -1;
     mix-blend-mode: color-dodge;
     position: absolute;
     right: 0;
@@ -24,6 +30,12 @@
 
     .download__btn {
         width: 20vw;
+    }
+
+    .download__img--gradient {
+        height: 100%;
+        right: 0;
+        top:0;
     }
 
 }

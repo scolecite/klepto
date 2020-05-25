@@ -43,6 +43,27 @@ h5 {
     line-height: 140%;
 }
 
+p {
+    font-family: DM Mono;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--white);
+}
+
+p a {
+    color: var(--teal);
+    text-decoration: underline;
+    transition: 150ms ease-in-out;
+}
+
+p a:hover {
+    text-decoration: none;
+    color: #FC1150;
+    transition: 150ms ease-in-out;
+}
+
 /* TABLET & UP */
 @media only screen and (min-width: 768px) {
 

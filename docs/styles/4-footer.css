@@ -1,0 +1,17 @@
+.footer {
+    background: linear-gradient(173.58deg, #282C41 0%, #1A1E33 60.46%);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__divider {
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.footer__caption {
+    margin-bottom: 5px;
+}
