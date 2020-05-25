@@ -60,7 +60,7 @@ p a {
 
 p a:hover {
     text-decoration: none;
-    color: #FC1150;
+    color: #CCD5FD;
     transition: 150ms ease-in-out;
 }
 
