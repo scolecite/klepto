@@ -1,0 +1,29 @@
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 50vh;
+}
+
+.download__btn {
+    border-right: 1px solid var(--white);
+}
+
+.download__img--gradient {
+    mix-blend-mode: color-dodge;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+
+/* TABLET & UP */
+@media only screen and (min-width: 768px) {
+
+    .download__btn {
+        width: 20vw;
+    }
+
+}
