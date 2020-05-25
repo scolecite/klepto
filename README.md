@@ -1,5 +1,5 @@
-# Klepto
-> Klepto is a Chrome extension with a companion Sketch plugin that allows designers to copy CSS font styles from live websites and paste them directly into Sketch as Sketch styles. 
+# Ditto
+> Ditto is a Chrome extension with a companion Sketch plugin that allows designers to copy CSS font styles from live websites and paste them directly into Sketch as Sketch styles. 
 
 
 ## Table of Contents
@@ -18,29 +18,29 @@
 
 ## Installation
 ### Installing the Chrome Extension
-Klepto is currently being processed by the Chrome Store, and until it is published, you will have to install it manually. To begin, download this repository.
+Ditto and its updates are currently being processed by the Chrome Store, and until they are published, you will have to install it manually. To begin, download this repository.
 1. Open __Chrome__.
 2. Go to *__chrome://extensions__* 
 3. Toggle “__Developer Mode__” in the upper-right 
 4. Click “__Load Unpacked__”
-5. Navigate to *__Downloads/klepto-master/chrome/assets__*
+5. Navigate to *__Downloads/ditto-master/chrome/assets__*
 6. Click __Open__.
 
-Voila, Klepto should be installed in Chrome. You should see a gray raccoon head icon in the extension menu. 
+Voila, Ditto should be installed in Chrome. You should see a double-t icon in the extension menu. 
 
 ---
 
 ### Installing the Sketch Plugin
 This one is pretty straightforward.
-1. Go to *__Downloads/klepto-master/sketch/__*
-2. Run *__klepto.sketchplugin__*
+1. Go to *__Downloads/ditto-master/sketch/__*
+2. Run *ditto.sketchplugin__*
 
-Voila, Klepto should be installed in Sketch. You should see Klepto in the Plugins dropdown menu.
+Voila, Ditto should be installed in Sketch. You should see Ditto in the Plugins dropdown menu.
 
 ## Usage
 ### Using the Chrome Extension
 1. Go to a page that you want to copy styles from.
-2. Click the gray raccoon head in the corner to activate the plugin. When activated, the raccoon head should be red and an empty __Clipboard History__ modal should appear.
+2. Click the gray raccoon head in the corner to activate the plugin. When activated, the double-t icon should be bright teal and an empty __Clipboard History__ modal should appear with instructions on what to do.
 4. Select the text you would like to copy and press your desired shortcut. The default shortcut is __Cmd + Right__. I suggest you remap it to something better.
 
 #### Notes about Chrome Extension Usage
@@ -60,10 +60,10 @@ Voila, Klepto should be installed in Sketch. You should see Klepto in the Plugin
 Again I suggest you remap this shortcut to something better.
 
 #### Notes about Sketch Plugin Usage
-- You may use the context menu in *__/Plugins/Klepto__* instead of the hotkey.
+- You may use the __Plugins/Paste CSS Styles__ menu instead of the hotkey.
 
 ## Styles Available
-Klepto is capable of copying the following styles from CSS into Sketch:
+Ditto is capable of copying the following styles from CSS into Sketch:
 - `font-size`
 - `color`
 - `line-height`
@@ -77,6 +77,5 @@ Klepto is capable of copying the following styles from CSS into Sketch:
 - `text-shadow`
 
 ## Contact
-- Current Support: Isaac Nemzer at inemzer@yext.com
-- Previous Support: Yana Gevorgyan at ygevorgyan@yext.com
-- Creator: Blake Quigley at blakedquigley@gmail.com
+- **Maintainer:** Yana Gevorgyan at ygis@mit.edu
+- **Initial Creator:** Blake Quigley at blakedquigley@gmail.com
