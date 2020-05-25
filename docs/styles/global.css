@@ -5,6 +5,18 @@
     --white: #FFFFFF;
 }
 
+::-moz-selection {
+    background: var(--teal);
+    color: var(--blueDark);
+    opacity: 1;
+}
+  
+::selection {
+    background: var(--teal);
+    color: var(--blueDark);
+    opacity: 1;
+}
+
 a {
     text-decoration: none;
 }
