@@ -5,7 +5,7 @@
 
 h1 {
     color: var(--teal);
-    font-family: Career, serif;
+    font-family: "Career", serif;
     font-style: normal;
     font-weight: 500;
     font-size: 90px;
@@ -41,7 +41,7 @@ h4 {
 
 h5 {
     color: var(--white);
-    font-family: Career, sans-serif;
+    font-family: "Career", serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
