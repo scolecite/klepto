@@ -1,4 +1,26 @@
-# Ditto
+<h1 align="center">
+  <img align="center" src="https://i.imgur.com/2ZWItcI.png" width="125" alt="icon">
+<br>
+  <h1 align="center">Sketch Ditto</h1>
+ <p align="center">
+  <img align="center" src="docs/images/modal--mobile.png" width="500" alt="Ditto in action.">
+</p>
+  <p align="center">
+    <a href="mailto:ygis@mit.edu">
+      <img src="https://img.shields.io/badge/Ditto-v1.1.0-green.svg?style=flat" alt="Contact">
+    </a>
+    <a href="mailto:ygis@mit.edu">
+      <img src="https://img.shields.io/badge/Sketch-v64+-orange.svg?style=flat" alt="Contact">
+    </a>
+<a href="mailto:ygis@mit.edu">
+      <img src="https://img.shields.io/badge/Contact-ygev-blue.svg?style=flat" alt="Contact">
+    </a>
+    <a href="https://opensource.org/licenses/GPL-3.0">
+      <img src="https://img.shields.io/badge/License-GPL 3.0-yellow.svg" alt="License: GPL 3.0">
+    </a>
+  </p>
+</h1>
+
 > Ditto is a Chrome extension with a companion Sketch plugin that allows designers to copy CSS font styles from live websites and paste them directly into Sketch as Sketch styles. 
 
 
