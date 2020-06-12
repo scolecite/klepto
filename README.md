@@ -21,22 +21,7 @@
   </p>
 </h1>
 
-> Ditto is a Chrome extension with a companion Sketch plugin that allows designers to copy CSS font styles from live websites and paste them directly into Sketch as Sketch styles. 
-
-
-## Table of Contents
-<!--ts-->
-   * [Table of Contents](#table-of-contents)
-   * [Installation](#installation)
-      * [Installing the Chrome Extension](#installing-the-chrome-extension)
-      * [Installing the Sketch Plugin](#installing-the-sketch-plugin)
-   * [Usage](#usage)
-      * [Using the Chrome Extension](#using-the-chrome-extension)
-      * [Using the Sketch Plugin](#using-the-sketch-plugin)
-   * [Styles Available](#styles-available)
-   * [Contact](#contact)
-<!--te-->
-
+Ditto is a Chrome extension with a companion Sketch plugin that allows designers to copy CSS font styles from live websites and paste them directly into Sketch as Sketch styles. 
 
 ## Installation
 ### Installing the Chrome Extension
@@ -58,6 +43,8 @@ This one is pretty straightforward.
 2. Run *ditto.sketchplugin__*
 
 Voila, Ditto should be installed in Sketch. You should see Ditto in the Plugins dropdown menu.
+
+  <img align="center" src="https://i.imgur.com/XqcgtoD.gif" alt="GIF showing how to use Ditto.">
 
 ## Usage
 ### Using the Chrome Extension
