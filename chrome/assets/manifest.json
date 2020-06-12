@@ -1,7 +1,7 @@
 {
   "author": "Yana Gevorgyan",
   "name": "Ditto",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Paste CSS text styles from a webpage directly into Sketch.",
   "permissions": ["activeTab", "tabs", "storage", "clipboardWrite", "clipboardRead", "<all_urls>"],
   "background": {
@@ -11,11 +11,9 @@
   "browser_action": {
     "default_title": "Waiting for background..."
   },
-  "icons": {
-    "16": "images/icon16_active.png",
-    "48": "images/icon48_active.png",
-    "128": "images/icon128_active.png"
-  },
+  "icons": { "16": "icon16.png",
+    "48": "icon48.png",
+   "128": "icon128.png" },
   "commands": {
     "copy-styles": {
       "suggested_key":  {
