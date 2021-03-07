@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img align="center" src="https://i.imgur.com/2ZWItcI.png" width="125" alt="icon">
+  <img align="center" src="icon.png" width="125" alt="icon">
 <br>
   <h1 align="center">Sketch Ditto</h1>
  <p align="center">
@@ -44,7 +44,7 @@ This one is pretty straightforward.
 
 Voila, Ditto should be installed in Sketch. You should see Ditto in the Plugins dropdown menu.
 
-  <img align="center" src="https://i.imgur.com/XqcgtoD.gif" alt="GIF showing how to use Ditto.">
+  <img align="center" src="demo.gif" alt="GIF showing how to use Ditto.">
 
 ## Usage
 ### Using the Chrome Extension
